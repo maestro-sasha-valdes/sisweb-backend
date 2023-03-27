@@ -122,7 +122,7 @@ export const updateProduct = (req, res) => {
     });
 };
 
-// Delete a Product with the specified id in the request
+// Delete a Product with the specified id in the request.
 export const deleteProduct = (req, res) => {
   // Validate request
   if (!req.body.id) {
@@ -134,7 +134,7 @@ export const deleteProduct = (req, res) => {
     return;
   }
 
-  // Delete Product in the database
+  // Delete Product in the database.
   Product.destroy({
     where: {
       id: req.body.id,
