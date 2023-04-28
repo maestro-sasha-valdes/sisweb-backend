@@ -125,7 +125,7 @@ export const updateProduct = (req, res) => {
 // Delete a Product with the specified id in the request.
 export const deleteProduct = (req, res) => {
   // Validate request
-  if (!req.body.id) {
+  if (!req.params.id) {
     res.status(400).json({
       status: "error",
       message: "Content can not be empty.",
@@ -137,7 +137,7 @@ export const deleteProduct = (req, res) => {
   // Delete Product in the database.
   Product.destroy({
     where: {
-      id: req.body.id,
+      id: req.params.id,
     },
   })
     .then((isDeleted) => {
